@@ -1,15 +1,17 @@
 import { ThemeProvider, CSSReset, ColorModeProvider, Button} from '@chakra-ui/core'
 import theme from "../theme"
-import { configureLanguage } from "../utils/language";
+//import { configureLanguage } from "../utils/language";
 import { LanguageProvider } from "../utils/LanguageProvider"
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <LanguageProvider>
       <ThemeProvider theme={theme}>
         <ColorModeProvider value="light">
           <CSSReset />
-          <Component {...pageProps} />
+          <Component {...pageProps} language={router.query.lang}/>
         </ColorModeProvider>
       </ThemeProvider>
     </LanguageProvider>

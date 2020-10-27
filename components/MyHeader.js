@@ -72,7 +72,7 @@ const Expanser = ({content}) => {
   );
 }
 
-const MyHeader = ({message, alert, content, label}) => {
+const MyHeader = ({message, alert, content, label, language}) => {
   return (
   <Stack
     w="100%"
@@ -99,7 +99,7 @@ const MyHeader = ({message, alert, content, label}) => {
         <Image display={{base:"none", md:"flex"}} ml="6" src="/centerLogo.svg" alt="Acert Logo" width="225px" height="90px"/>
       </Link>
     </Box>
-    <HeaderMenu content={content} label={label}/>
+    <HeaderMenu content={content} label={label} language={language}/>
     <Box display={{xs: "none",sm: "none", md:"none", lg:"flex" }} alignItems="center" >
       <Button variantColor="primary" color="white" px="10" py="6" textTransform="uppercase">Login</Button>
     </Box>

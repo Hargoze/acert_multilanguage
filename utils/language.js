@@ -3,7 +3,7 @@ import { parseCookies, setCookie } from "nookies";
 
 export const fallbackLanguage = "en";
 
-export const languages = ["en", "nl"];
+export const languages = ["en", "fr"];
 
 export const validateLanguage = (lang) => {
   return languages.includes(lang) ? lang : fallbackLanguage;

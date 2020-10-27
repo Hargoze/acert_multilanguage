@@ -43,13 +43,15 @@ const GetIcon = ({links}) => {
     }
 }
 
-const DisplayList = ({links, label}) => {
-    const currentLabel = getLabel(label, links.name)
+const DisplayList = ({links, label, language}) => {
+    console.log("lang:", language)
+    const currentLabel = getLabel(label, links.name, language)
+    console.log(currentLabel)
     return (
         <Box>
             <Flex align="center">
                 {links.icon ? <GetIcon links={links}/> : void 0}
-                <Link href={links.href} isDisabled={links.status === "COMING_SOON" ? true : false}>{currentLabel ? currentLabel[language] : links.name}</Link>
+                <Link href={links.href} isDisabled={links.status === "COMING_SOON" ? true : false}>{currentLabel ? currentLabel : links.name}</Link>
                 {links.status === "COMING_SOON" ? <Badge ml="4" px="2">Coming soon</Badge> : void 0}
                 {links.status === "BETA" ? <Badge variant="solid" variantColor="red" ml="4" px="2">Beta</Badge> : void 0}
             </Flex>
@@ -58,7 +60,7 @@ const DisplayList = ({links, label}) => {
     )
 }
 
-const HeaderMenu = ({content, label}) => {
+const HeaderMenu = ({content, label, language}) => {
   return (
     <Flex
       display={{xs: "none",sm: "none", md:"none", lg:"flex" }}
@@ -92,7 +94,7 @@ const HeaderMenu = ({content, label}) => {
                             <List spacing={1} fontSize="22px">
                                 {current.link.map((link, j) => (
                                 <ListItem pl="2" key={j}>
-                                    <DisplayList links={link} label={label}/>
+                                    <DisplayList links={link} label={label} language={language}/>
                                     <Divider />
                                 </ListItem>
                                 ))}

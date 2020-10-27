@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 
-export const defaultLocale = "pt";
-export const locales = ["pt", "en"];
+export const defaultLocale = "en";
+export const locales = ["fr", "en"];
 export const LanguageContext = createContext([]);
 
 export const LanguageProvider = ({ children }) => {
-  const [locale, setLocale] = useState("pt");
+  const [locale, setLocale] = useState();
 
   return (
     <LanguageContext.Provider value={[locale, setLocale]}>

@@ -9,14 +9,8 @@ import { CallToAction } from "../../components/call_to_action"
 import { SideComponent } from "../../components/sideComponent"
 import { BottomComponent } from "../../components/bottomComponent"
 import { PrismaClient } from '@prisma/client';
-//import { getLabel} from "../../lib/getLabel"
-import { useRouter } from "next/router";
 
-
-//  <MyHeader message="have a nice day :)" alert={true} content={headers}/>
-
-const Post = ({headers, label}) => {
-  console.log(headers, label)
+const Post = ({headers, label, ...props}) => {
   return (
   <Container>
   <Head>
@@ -25,7 +19,7 @@ const Post = ({headers, label}) => {
     <meta name="description" content="acert.io landing page"/>
     <title>acert | reframing digital access</title>
   </Head>
-  <MyHeader message="have a nice day :)" alert={true} content={headers}/>
+  <MyHeader message="have a nice day :)" alert={true} content={headers} label={label} language={props.language}/>
    <Hero />
     <InBetween />
     <SideComponent link="#" line1="i dont get it," line2="explain differently"/>
