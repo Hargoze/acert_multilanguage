@@ -48,7 +48,6 @@ export async function getStaticProps() {
     include: {highlight: true, picture: true, link: true }
   })
   const label = await prisma.label.findMany()
-  console.log(headers, label)
   return {
     props: {
       headers,

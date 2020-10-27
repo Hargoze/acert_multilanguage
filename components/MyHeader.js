@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Text, Button, Image, Stack, Spinner, useDisclosure, List, ListItem, Link} from "@chakra-ui/core";
+import { Box, Text, Button, Image, Stack, useDisclosure, List, ListItem, Link} from "@chakra-ui/core";
 import HeaderMenu from "../components/HeaderMenu"
+import { getLabel} from "../lib/getLabel"
 
 import {
   Drawer,
@@ -16,24 +17,26 @@ import {
   AlertIcon,
 } from "@chakra-ui/core";
 
-const DrawerLayout = ({title, index, content}) => {
+const DrawerLayout = ({title, index, content, label, language}) => {
   return (
   <Stack py="2" fontSize={{base:"sm", sm:"md"}} align="center" textAlign="center">
     <Text fontWeight="bold">{title}</Text>
     {content ? 
     <List spacing={1}>
-      {content.map((item, i) => (
+      {content.map((item, i) => {
+        const currentLabel = getLabel(label, item.name, language)
+        return (
           <ListItem key={index + i}>
-            <Link href={item.href}>{item.name}</Link>
+            <Link href={item.href}>{currentLabel ? currentLabel : item.name}</Link>
           </ListItem>
-      ))}
+      )})}
     </List>
     : void 0}
   </Stack>
   )
 };
 
-const Expanser = ({content}) => {
+const Expanser = ({content, label, language}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -57,9 +60,11 @@ const Expanser = ({content}) => {
           </DrawerHeader>
           <DrawerBody >
             <Stack w="95%" alignItems="center" justify="space-around">
-            {content.map((current, i) => (
-              <DrawerLayout title={current.name} index={i} key={i} content={current.link}/>
-            ))}
+            {content.map((current, i) => {
+              const name = getLabel(label, ("header" + current.id), language)
+              return (
+              <DrawerLayout title={name ? name : current.name} index={i} key={i} content={current.link} label={label} language={language}/>
+            )})}
               <Box mt="4">
                 <Button bg="white" color="primary.500" rounded="full" mr="3" _hover={{bg:"primary.50"}} _active={{bg:"primary.100"}} textTransform="uppercase">Login</Button>
                 <Button bg="white" color="primary.500" rounded="full" _hover={{bg:"primary.50"}} _active={{bg:"primary.100"}} border="1px" borderColor="primary.600" textTransform="uppercase">Get a demo</Button>
@@ -103,7 +108,7 @@ const MyHeader = ({message, alert, content, label, language}) => {
     <Box display={{xs: "none",sm: "none", md:"none", lg:"flex" }} alignItems="center" >
       <Button variantColor="primary" color="white" px="10" py="6" textTransform="uppercase">Login</Button>
     </Box>
-    <Expanser content={content}/>
+    <Expanser content={content} label={label} language={language}/>
   </Stack>
   </Stack>
     );

@@ -44,9 +44,7 @@ const GetIcon = ({links}) => {
 }
 
 const DisplayList = ({links, label, language}) => {
-    console.log("lang:", language)
     const currentLabel = getLabel(label, links.name, language)
-    console.log(currentLabel)
     return (
         <Box>
             <Flex align="center">
@@ -60,71 +58,84 @@ const DisplayList = ({links, label, language}) => {
     )
 }
 
+const GetHeaderCell = ({current, label, language}) => {
+    const name = getLabel(label, ("header" + current.id), language)
+    if (current.picture.length === 0 && current.link.length === 0) {
+        return (
+            <Link href={current.empty_link} fontSize={{lg:"16px", xl:"24px"}} fontWeight="bold">{current.name}</Link>
+        )
+    } else {
+    return (
+    <Menu >
+          {({ isOpen }) => (
+          <React.Fragment>
+          <MenuButton
+            as={Button}
+            bg="white"
+            onKeyDown
+            px={4}
+            py={2}
+            _hover={{ bg: "white" }}
+            _active={{ bg: "white" }}
+            _focus={{ outline: 0, boxShadow: "none" }}
+            rightIcon={isOpen ? "chevron-up" : "chevron-down"}
+            fontSize={{lg:"16px", xl:"24px"}}
+          >
+            {name ? name : current.name}
+          </MenuButton>
+        <MenuList w={current.picture.length > 0 ? "full" : "auto"}>
+            <MenuItem  bg="white" _focus={{bg: "white"}}>
+                <Flex h="auto" justify="space-around" align="center" w="100%">
+                    <Stack h="full" justify="space-between" p="2">
+                        <List spacing={1} fontSize="22px">
+                            {current.link.map((link, j) => (
+                            <ListItem pl="2" key={j}>
+                                <DisplayList links={link} label={label} language={language}/>
+                                <Divider />
+                            </ListItem>
+                            ))}
+                        </List>
+                        <List>
+                        {current.highlight.map((highlight, j) => (
+                            <ListItem pl="2" key={j}>
+                                <Link href={highlight.href} fontSize={{lg:"16px", xl:"24px"}} color="primary.400">{highlight.name}</Link>
+                                <Icon name="arrow-forward" fontSize={{lg:"14px", xl:"20px"}} color="primary.400" ml="2"/>
+                            </ListItem>
+                        ))}
+                        </List>
+                    </Stack>
+                {current.picture.length > 0 ?
+                    <Flex justify="space-around" w="750px" borderLeft="1px" borderRadius="md" borderColor="gray.200">
+                    {current.picture.map((images, j) => (
+                        <HeaderImg 
+                        images={images} 
+                        key={j}/>
+                    ))}
+                    </Flex>
+                : void 0}
+                </Flex>
+            </MenuItem> 
+        </MenuList>
+        </React.Fragment>
+    )}
+    </Menu>
+    )
+    }
+}
+
 const HeaderMenu = ({content, label, language}) => {
   return (
     <Flex
-      display={{xs: "none",sm: "none", md:"none", lg:"flex" }}
-      alignItems="center"
-      justify="space-between"
-      w="50%"
-      fontSize="22px"
-    >
-        {content.map((current, i) => (
-            <Menu key={i}>
-              {({ isOpen }) => (
-              <React.Fragment>
-              <MenuButton
-                as={Button}
-                bg="white"
-                onKeyDown
-                px={4}
-                py={2}
-                _hover={{ bg: "white" }}
-                _active={{ bg: "white" }}
-                _focus={{ outline: 0, boxShadow: "none" }}
-                rightIcon={isOpen ? "chevron-up" : "chevron-down"}
-                fontSize={{lg:"16px", xl:"24px"}}
-              >
-                {current.name}
-              </MenuButton>
-            <MenuList w={current.picture.length > 0 ? "full" : "auto"}>
-                <MenuItem  bg="white" _focus={{bg: "white"}}>
-                    <Flex h="auto" justify="space-around" align="center" w="100%">
-                        <Stack h="full" justify="space-between" p="2">
-                            <List spacing={1} fontSize="22px">
-                                {current.link.map((link, j) => (
-                                <ListItem pl="2" key={j}>
-                                    <DisplayList links={link} label={label} language={language}/>
-                                    <Divider />
-                                </ListItem>
-                                ))}
-                            </List>
-                            <List>
-                            {current.highlight.map((highlight, j) => (
-                                <ListItem pl="2" key={j}>
-                                    <Link href={highlight.href} fontSize={{lg:"16px", xl:"24px"}} color="primary.400">{highlight.name}</Link>
-                                    <Icon name="arrow-forward" fontSize={{lg:"14px", xl:"20px"}} color="primary.400" ml="2"/>
-                                </ListItem>
-                            ))}
-                            </List>
-                        </Stack>
-                    {current.picture.length > 0 ?
-                        <Flex justify="space-around" w="750px" borderLeft="1px" borderRadius="md" borderColor="gray.200">
-                        {current.picture.map((images, j) => (
-                            <HeaderImg 
-                            images={images} 
-                            key={j}/>
-                        ))}
-                        </Flex>
-                    : void 0}
-                    </Flex>
-                </MenuItem> 
-            </MenuList>
-            </React.Fragment>
-        )}
-        </Menu>
-        ))}
-    </Flex>
+    display={{xs: "none",sm: "none", md:"none", lg:"flex" }}
+    alignItems="center"
+    justify="space-between"
+    w="50%"
+    fontSize="22px"
+  >
+      {content.map((current, i) => (
+          <GetHeaderCell current={current} label={label} key={i} language={language}/>
+      ))}
+  </Flex>
 );
 };
 
