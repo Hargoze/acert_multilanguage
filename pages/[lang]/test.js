@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
-import LanguageSelector from "../../components/LanguageSelector";
 
 export default () => {
   const router = useRouter();
@@ -8,7 +7,6 @@ export default () => {
   return (
     <Container>
       <h1>Hello world! The language slug is: {router.query.lang}</h1>
-      <LanguageSelector />
     </Container>
   );
 };

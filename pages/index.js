@@ -3,12 +3,11 @@ import Head from 'next/head'
 
 export const defaultLocale = 'en'
 
-export const locales = ['en', 'fr', 'pl'] 
+export const locales = ['en', 'fr'] 
 
 export const languageNames = {
   en: 'English',
-  fr: 'français',
-  pl: 'polski'
+  fr: 'français'
 }
 
 export function isLocale(tested) {

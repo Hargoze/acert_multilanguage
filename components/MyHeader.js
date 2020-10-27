@@ -73,15 +73,6 @@ const Expanser = ({content}) => {
 }
 
 const MyHeader = ({message, alert, content, label}) => {
-  if (!content || !label) {
-    return (<Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="orange.500"
-        size="xl"
-      />)
-}
   return (
   <Stack
     w="100%"

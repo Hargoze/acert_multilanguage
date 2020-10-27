@@ -12,6 +12,9 @@ import { PrismaClient } from '@prisma/client';
 //import { getLabel} from "../../lib/getLabel"
 import { useRouter } from "next/router";
 
+
+//  <MyHeader message="have a nice day :)" alert={true} content={headers}/>
+
 const Post = ({headers, label}) => {
   console.log(headers, label)
   return (
@@ -22,6 +25,7 @@ const Post = ({headers, label}) => {
     <meta name="description" content="acert.io landing page"/>
     <title>acert | reframing digital access</title>
   </Head>
+  <MyHeader message="have a nice day :)" alert={true} content={headers}/>
    <Hero />
     <InBetween />
     <SideComponent link="#" line1="i dont get it," line2="explain differently"/>
@@ -40,7 +44,7 @@ export async function getStaticPaths() {
       {params: {lang: "en"} },
       {params: {lang: "fr"} }
     ],
-    fallback: true,
+    fallback: false,
   }
 }
 
