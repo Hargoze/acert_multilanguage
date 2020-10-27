@@ -1,0 +1,125 @@
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+model Highlight {
+  id    Int     @default(autoincrement()) @id
+  name String
+  href String @default("#")
+  header Header[] @relation(references: [id])
+}
+
+model Link {
+  id    Int     @default(autoincrement()) @id
+  status String @default("READY")
+  name String
+  href String @default("#")
+  header Header[] @relation(references: [id])
+}
+
+model Picture {
+  id    Int     @default(autoincrement()) @id
+  image String
+  description String
+  link String
+  href String @default("#")
+  header Header[] @relation(references: [id])
+}
+
+model Header {
+  id    Int     @default(autoincrement()) @id
+  name String
+  link Link[] @relation(references: [id])
+  picture Picture[] @relation(references: [id])
+  highlight Highlight[] @relation(references: [id])
+}
+
+model Fonctionnality {
+  id    Int     @default(autoincrement()) @id
+  name String
+  description String?
+  price Price[] @relation(references: [id])
+}
+
+model Price {
+  id    Int     @default(autoincrement()) @id
+  price1 Int?
+  price2 Int?
+  name String
+  devices Int @default(20)
+  description String @default("description")
+  fonctionnality Fonctionnality[]  @relation(references: [id])
+  href String @default("#")
+}
+
+model feature {
+  id    Int     @default(autoincrement()) @id
+  name String
+  acert String @default("yes")
+  competitor String @default("no")
+}
+
+model Compare {
+  id    Int     @default(autoincrement()) @id
+  name String
+  file String
+  summary String
+  logo String?
+  last_update String @default("October 05, 2020")
+}
+
+model Button {
+  id    Int     @default(autoincrement()) @id
+  section  Section[] @relation(references: [id])
+  name String
+  style String?
+  type String @default("Link")
+  href String? @default("#")
+  file String?
+  function String?
+  Arguments String?
+}
+
+model Section_Image {
+  id    Int     @default(autoincrement()) @id
+  name String
+  alt String @default("alt")
+  width String?
+  length String?
+  section  Section[]
+}
+
+model Section {
+  id    Int     @default(autoincrement()) @id
+  page String @default("product")
+  title String
+  content String
+  color String @default("black")
+  style String?
+  button_alignement String @default("start")
+  buttons Button[] @relation(references: [id])
+  image Section_Image? @relation(fields: [ImageId], references: [id])
+  ImageId Int?
+  direction String? @default("row")
+  link String?
+  href String?
+  link_color String?
+  background_color String?
+  background_image String?
+  bgimg_props String?
+  ps String?
+  ps_position Boolean? @default(true)
+  ps_color String?
+  list String?
+}
+
+model Suggestion {
+  id    Int     @default(autoincrement()) @id
+  comment String
+}

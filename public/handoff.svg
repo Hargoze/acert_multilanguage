@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100">
+  <defs>
+    <filter id="b" x="-18.7%" y="-22%" width="136.3%" height="142.9%" filterUnits="objectBoundingBox">
+      <feOffset dy="2.5" in="SourceAlpha" result="a1120z"/>
+      <feGaussianBlur stdDeviation="2.5" in="a1120z" result="a1121z"/>
+      <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="a1121z" result="a1122z"/>
+    </filter>
+    <filter id="e" x="0%" y="-1.1%" width="98.9%" height="101.1%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceAlpha" result="a1125z"/>
+      <feOffset dy=".84" in="a1125z" result="a1126z"/>
+      <feComposite in="a1126z" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="a1127z"/>
+      <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0" in="a1127z" result="a1128z"/>
+    </filter>
+    <linearGradient id="d" gradientTransform="rotate(45 .5 .5)">
+      <stop offset="0" stop-color="#2B2B2B"/>
+      <stop offset="1" stop-color="#232323"/>
+    </linearGradient>
+    <clipPath id="c">
+      <use xlink:href="#a"/>
+    </clipPath>
+    <path d="M12.5 25.84c0-7.367 5.973-13.34 13.34-13.34h48.32c7.367 0 13.34 5.973 13.34 13.34v48.32c0 7.367-5.973 13.34-13.34 13.34H25.84c-7.367 0-13.34-5.973-13.34-13.34z" id="a"/>
+  </defs>
+  <g filter="url(#b)">
+    <use stroke-width="1.68" stroke="#000" xlink:href="#a" clip-path="url(#c)"/>
+  </g>
+  <use xlink:href="#a" fill="url(#d)" stroke-opacity="0"/>
+  <use filter="url(#e)" xlink:href="#a"/>
+  <use xlink:href="#a" clip-path="url(#c)" fill="transparent" stroke-width="1.68" stroke="rgba(255, 255, 255, 0.01)"/>
+  <g>
+    <defs>
+      <linearGradient id="g" gradientTransform="rotate(45 .5 .5)">
+        <stop offset="0" stop-color="#FF3467"/>
+        <stop offset="1" stop-color="#E7315F"/>
+      </linearGradient>
+      <filter id="h" x="0%" y="-2.8%" width="99.7%" height="105.2%" filterUnits="objectBoundingBox">
+        <feGaussianBlur in="SourceAlpha" result="a1133z"/>
+        <feOffset dy=".84" in="a1133z" result="a1134z"/>
+        <feComposite in="a1134z" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="a1135z"/>
+        <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0" in="a1135z" result="a1136z"/>
+      </filter>
+      <path d="M10 25a5 5 0 01-10 0V5a5 5 0 015-5h20a5 5 0 010 10H10z" transform="rotate(-45 87.491 -20.027)" id="f"/>
+    </defs>
+    <use xlink:href="#f" fill="url(#g)" clip-path="url(#a1130z)"/>
+    <use filter="url(#h)" xlink:href="#f"/>
+  </g>
+  <g>
+    <defs>
+      <linearGradient id="j" gradientTransform="rotate(45 .5 .5)">
+        <stop offset="0" stop-color="#FF3467"/>
+        <stop offset="1" stop-color="#E7315F"/>
+      </linearGradient>
+      <filter id="k" x="0%" y="-2.8%" width="99.7%" height="105.2%" filterUnits="objectBoundingBox">
+        <feGaussianBlur in="SourceAlpha" result="a1141z"/>
+        <feOffset dy=".84" in="a1141z" result="a1142z"/>
+        <feComposite in="a1142z" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="a1143z"/>
+        <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0" in="a1143z" result="a1144z"/>
+      </filter>
+      <path d="M5 30a5 5 0 010-10h15V5a5 5 0 0110 0v20a5 5 0 01-5 5z" transform="rotate(-45 96.991 -42.962)" id="i"/>
+    </defs>
+    <use xlink:href="#i" fill="url(#j)" clip-path="url(#a1138z)"/>
+    <use filter="url(#k)" xlink:href="#i"/>
+  </g>
+</svg>

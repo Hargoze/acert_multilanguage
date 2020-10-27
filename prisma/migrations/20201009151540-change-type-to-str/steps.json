@@ -1,0 +1,25 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateField",
+      "model": "Button",
+      "field": "type",
+      "type": "String"
+    },
+    {
+      "tag": "UpdateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Button",
+          "field": "type"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "newValue": "\"Link\""
+    }
+  ]
+}

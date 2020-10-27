@@ -1,0 +1,17 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateField",
+      "model": "Section_Image",
+      "field": "width",
+      "type": "String"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Section_Image",
+      "field": "length",
+      "type": "String"
+    }
+  ]
+}

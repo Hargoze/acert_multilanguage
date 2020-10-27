@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1764px" height="900px" viewBox="0 0 1764 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>circle@2x</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1764" height="900"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="83.0475984%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="83.0475984%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home-copy" transform="translate(-284.000000, 0.000000)">
+            <g id="circle" transform="translate(284.000000, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Group-3" mask="url(#mask-2)" fill-rule="nonzero">
+                    <g transform="translate(0.000000, -410.000000)">
+                        <circle id="Oval" stroke="#FF5722" stroke-width="1" fill="none" opacity="0.121744792" cx="882" cy="882" r="540"></circle>
+                        <circle id="Oval" stroke="#FF5722" stroke-width="1" fill="none" opacity="0.121744792" cx="882" cy="882" r="692"></circle>
+                        <circle id="Oval" stroke="#FF5722" stroke-width="1" fill="none" opacity="0.121744792" cx="882" cy="882" r="882"></circle>
+                        <circle id="Oval" stroke="#FF5722" stroke-width="1" fill="none" opacity="0.121744792" cx="882" cy="882" r="153"></circle>
+                        <circle id="Oval" stroke="#FF5722" stroke-width="1" fill="none" opacity="0.121744792" cx="882" cy="882" r="265"></circle>
+                        <circle id="Oval" stroke="#FF5722" stroke-width="1" fill="none" opacity="0.121744792" cx="882" cy="882" r="391"></circle>
+                        <circle id="Oval" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="610" cy="601" r="5"></circle>
+                        <circle id="Oval-Copy-14" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="1186" cy="636" r="5"></circle>
+                        <circle id="Oval-Copy-17" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="1176" cy="1140" r="5"></circle>
+                        <circle id="Oval-Copy-15" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="882" cy="617" r="5"></circle>
+                        <circle id="Oval-Copy-18" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="497" cy="949" r="5"></circle>
+                        <circle id="Oval-Copy-21" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="456" cy="1213" r="5"></circle>
+                        <circle id="Oval-Copy-20" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="246" cy="1155" r="5"></circle>
+                        <circle id="Oval-Copy-19" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="44" cy="606" r="5"></circle>
+                        <circle id="Oval-Copy-16" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="1234" cy="471" r="5"></circle>
+                        <circle id="Oval-Copy-12" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="742" cy="1107" r="5"></circle>
+                        <circle id="Oval-Copy-13" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="1022" cy="944" r="5"></circle>
+                        <circle id="Oval-Copy-11" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="330" cy="464" r="5"></circle>
+                        <circle id="Oval-Copy-3" stroke="#FFFFFF" stroke-width="3" fill="#FFEBE4" cx="347" cy="807" r="5"></circle>
+                    </g>
+                </g>
+                <rect id="Rectangle" fill="url(#linearGradient-3)" fill-rule="nonzero" mask="url(#mask-2)" transform="translate(882.000000, 80.500000) rotate(-180.000000) translate(-882.000000, -80.500000) " x="0" y="1" width="1764" height="159"></rect>
+                <rect id="Rectangle" fill="url(#linearGradient-4)" fill-rule="nonzero" mask="url(#mask-2)" x="0" y="684" width="1764" height="216"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

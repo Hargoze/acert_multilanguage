@@ -1,0 +1,24 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Button",
+      "field": "style",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Button",
+      "field": "href",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Button",
+      "field": "file",
+      "arity": "Optional"
+    }
+  ]
+}
